@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-// Funcion para mostrar Fotografia
 var PhotoOrientation;
 (function (PhotoOrientation) {
     PhotoOrientation[PhotoOrientation["Landscape"] = 0] = "Landscape";
@@ -33,11 +32,6 @@ class Album {
     }
 }
 const album = new Album(2, 'Cosas que contarte');
-const picture = new Picture(2, 'Morodo Madrid', PhotoOrientation.Square);
+const picture = new Picture(1, 'Morodo Madrid', PhotoOrientation.Square);
 album.addPicture(picture);
-console.log('album', album);
-// Accediendo a los parametros publicos
-picture.id = 1;
-picture.title = 'Gran Vía'; // accesos publicos
-album.title = 'Ozm Stayl';
 console.log('album', album);
