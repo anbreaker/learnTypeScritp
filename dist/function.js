@@ -18,3 +18,22 @@ let createPic = (title, date, size) => {
 };
 const picture = createPic('Curro', '20-03-10', '100x100');
 console.log('picture', picture);
+//Tipo de retorno en TypeScript
+function handleError(code, message) {
+    // Procesamineto
+    if (message === 'error') {
+        throw new Error(`${message}. Code error: ${code}`);
+    }
+    else {
+        return 'An error has ocurred';
+    }
+}
+let result = handleError(200, 'OK'); // Devuelve un string
+console.log('result', result);
+try {
+    result = handleError(404, 'error'); // Devuelve un error que debemos capturar.
+    console.log('result', result);
+}
+catch (error) {
+    console.log('Se produjo un error y lo capturamos');
+}
