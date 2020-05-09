@@ -28,3 +28,34 @@
   <!-- agregar en tsconfig.json -->
 - `"moduleResolution": "node",`
   `"traceResolution": true,`
+
+### Webpack y agrupación de Módulos
+
+- `npm init -y`
+- `npm install typescript webpack webpack-cli ts-loader --save-dev`
+
+### Crear archivo de configuracion webpack.conf.js
+
+- `touch webpack.config.js`
+- ```
+  module.exports = {
+      mode: 'production',
+      entry: './src/main.ts',
+      devtool: 'inline-source-map',
+      module: {
+          rules: [
+              {
+                  test: /\.ts$/,
+                  use: 'ts-loader',
+                  exclude: /node_modules/
+              }
+          ]
+      },
+      resolve: {
+          extensions: ['.ts', '.js'],
+      },
+      output: {
+          filename: 'bundle.js',
+      }
+  }
+  ```
