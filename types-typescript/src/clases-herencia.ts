@@ -1,5 +1,3 @@
-export {};
-
 // TypeScritp 3.8
 export {};
 
